@@ -213,9 +213,59 @@ d = dict(golden=0xDAA520, indigo=0x4B0082)
 print(d)
 e = d.copy()
 print(e)
-f = dict(e)
+f = dict(e) # more common
 print(f)
 
-g = dict(wheat=0xF5DEB3, khaki=0xF0E68C)
+g = dict(wheat=0xF5DEB3, khaki=0xF0E68C)  
 f.update(g)
 print(f)
+
+# update dict
+stocks = {'GOOG': 891, 'AAPL': 416, 'IBM': 194}
+stocks.update({'GOOG': 894, 'YHOO': 25})
+print(stocks)
+
+colors = dict(golden=0xDAA520, indigo=0x4B0082)
+for key in colors:
+    print("{key} => {value}".format(key=key, value=colors[key]))
+
+for value in colors.values():
+    print(value)
+
+for key in colors.keys():
+    print(key)
+
+for key, value in colors.items():      # more clear
+    print("{key} => {value}".format(key=key, value=value))
+
+symbols = dict(usd='\u0024', gbp='\u00a3')
+print(symbols)
+print('usd' in symbols) # checking membership is only at key level
+
+z = {'H': 1, 'Tc': 43, 'Xe': 54}
+print(z)
+del z['Tc']
+print(z)
+
+m = {'H': [1, 2, 3],
+     'He': [3, 4],
+     'Li': [6, 7]}
+print(m)
+m['H'] += [4, 5, 6, 7]
+print(m)
+m['N'] = [13, 14, 15]
+print(m)
+
+from pprint import pprint as pp 
+pp(m)
+
+
+# Protocol Implementing Collections
+# Container str,list,range,tuple,bytes,set,dict
+# Sized str,list,range,tuple,bytes,set,dict
+# Iterable str,list,range,tuple,bytes,set,dict
+# Sequence str, list, range, tuple, bytes
+# Mutable sequence list
+# Mutable Set set
+# Mutable Mapping dict
+
